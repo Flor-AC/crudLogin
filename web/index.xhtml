@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <form>
+            <div class="form-group">
+                <b:label value="Correo Electronico"></b:label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+            </div>
+            <div class="form-group">
+                <b:label value="Contraseña"></b:label>
+              <input type="password" class="form-control" id="exampleInputPassword1"/>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+              <label for="exampleCheck1">Mantener sesión abierta</label>
+            </div>
+            <b:button value="Entrar" href="/crudLogin/empleados.xhtml"></b:button>
+        </form>
+    </h:body>
+</html>
+
