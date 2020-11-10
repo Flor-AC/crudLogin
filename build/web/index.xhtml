@@ -2,12 +2,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Login</title>
     </h:head>
     <h:body>
-        <form>
+        
+        <p:panel id="signIn" header="Login" >
+            <h:panelGrid columns="2" cellpadding="25px" >
+                <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
+                <p:inputText id="txtUsername" value="#{indexBean.user.username}" />
+                <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
+                <p:inputText id="txtPassword" value="#{indexBean.user.password}" />
+            </h:panelGrid>
+            <br/>
+            <br/>
+            <p:commandButton value="Sign in" action="#{indexBean.signIn()}" update="signIn"  />
+            <p:commandButton value="Sign up" onclick="signUp" update="signIn" />
+        </p:panel>
+        
+        <p:panel id="signUp" header="SignUp" visible="true">
+            <h:panelGrid columns="2" cellpadding="25px">
+                <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
+                <p:inputText id="txtUsername" value="#{indexBean.user.username}" />
+                
+                <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
+
+                <p:password id="txtPassword" value="#{indexBean.user.password}"
+                            required="true" placeholder="Password"
+                            requiredMessage="Error: enter your password"
+                            match="usPasswordConfirm"/>
+
+                <p:outputLabel for="usPasswordConfirm" value="Repeat Password:"/>
+
+                <p:password id="usPasswordConfirm" value="#{indexBean.user.password}"
+                            required="true" placeholder="Repeat Password"
+                            requiredMessage="Error: repeat your password"/>
+                
+            </h:panelGrid>
+            <br/>
+            <br/>
+            <p:commandButton value="Sign Up" action="#{indexBean.signUp()}" update="signUp" />
+        </p:panel>
+        
+        
+<!--        <form>
             <div class="form-group">
                 <b:label value="Correo Electronico"></b:label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
@@ -21,7 +61,7 @@
               <label for="exampleCheck1">Mantener sesión abierta</label>
             </div>
             <b:button value="Entrar" href="/crudLogin/empleados.xhtml"></b:button>
-        </form>
+        </form>-->
     </h:body>
 </html>
 

@@ -8,10 +8,11 @@
         <title>Departamentos</title>
     </h:head>
     <h:body>
-        <b:navBar brand="Brand" brandHref="#" inverse="true">
+        <b:navBar brandHref="#" inverse="true">
             <b:navbarLinks>
-                <b:navLink value="Inicio" href="/curdLing/bienvenido.xhtml"></b:navLink>
-                <b:navLink value="Empleados" href="/crudLing/empleados.xhtml"></b:navLink>
+                <b:navLink value="Inicio" href="/crudLogin/faces/bienvenido.xhtml"></b:navLink>
+                <b:navLink value="Empleados" href="/crudLogin/faces/empleados.xhtml"></b:navLink>
+                <b:navLink value="Salir" href="/crudLogin/faces/index.xhtml"></b:navLink>
             </b:navbarLinks>
         </b:navBar>
         <h1>Departamentos</h1>
@@ -19,14 +20,10 @@
             <p:growl id="miMsg" showDetail="true" sticky="true" /> 
             <br/>
             <span class="ui-float-label">
-                <p:outputLabel id="lblClave" for="txtClave" value="Clave: " />
-                <p:inputText id="txtClave" value="#{indexBean.id}" />
+                <p:outputLabel id="lblNombre" for="txtNombre" value="Nombre : " />
+                <p:inputText id="txtNombre" value="#{indexBean.nombre}" />
             </span>
             <br/>
-            <span class="ui-float-label">
-                <p:outputLabel id="lblDepartamento" for="txtNombre" value="Departamento: " />
-                <p:inputText id="txtDepartamento" value="#{indexBean.departamento}" />
-            </span>
             <br/>
             <p:commandButton value="Guardar" action="#{indexBean.insert()}" update=":form" />
             <p:commandButton value="Borrar" action="#{indexBean.delete()}" update=":form" />
