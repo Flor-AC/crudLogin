@@ -12,38 +12,38 @@
         <p:panel id="signIn" header="Login" >
             <h:panelGrid columns="2" cellpadding="25px" >
                 <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
-                <p:inputText id="txtUsername" value="#{indexBean.user.username}" />
+                <p:inputText id="txtUsername" value="#{indexBeanUsr.usuario}" />
                 <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
-                <p:inputText id="txtPassword" value="#{indexBean.user.password}" />
+                <p:inputText id="txtPassword" value="#{indexBeanUsr.password}" />
             </h:panelGrid>
             <br/>
             <br/>
-            <p:commandButton value="Sign in" action="#{indexBean.signIn()}" update="signIn"  />
+            <p:commandButton value="Sign in" action="#{indexBeanUsr.finUser()}" update="signIn"  />
             <p:commandButton value="Sign up" onclick="signUp" update="signIn" />
         </p:panel>
         
         <p:panel id="signUp" header="SignUp" visible="true">
             <h:panelGrid columns="2" cellpadding="25px">
                 <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
-                <p:inputText id="txtUsername" value="#{indexBean.user.username}" />
+                <p:inputText id="txtUsername" value="#{indexBeanUsr.usuario}" />
                 
                 <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
 
-                <p:password id="txtPassword" value="#{indexBean.user.password}"
+                <p:password id="txtPassword" value="#{indexBeanUsr.password}"
                             required="true" placeholder="Password"
                             requiredMessage="Error: enter your password"
                             match="usPasswordConfirm"/>
 
                 <p:outputLabel for="usPasswordConfirm" value="Repeat Password:"/>
 
-                <p:password id="usPasswordConfirm" value="#{indexBean.user.password}"
+                <p:password id="usPasswordConfirm" value="#{indexBeanUsr.password}"
                             required="true" placeholder="Repeat Password"
                             requiredMessage="Error: repeat your password"/>
                 
             </h:panelGrid>
             <br/>
             <br/>
-            <p:commandButton value="Sign Up" action="#{indexBean.signUp()}" update="signUp" />
+            <p:commandButton value="Sign Up" action="#{indexBeanUsr.insert()}" update="signUp" />
         </p:panel>
         
         

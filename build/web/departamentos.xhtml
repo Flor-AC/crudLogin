@@ -21,13 +21,13 @@
             <br/>
             <span class="ui-float-label">
                 <p:outputLabel id="lblNombre" for="txtNombre" value="Nombre : " />
-                <p:inputText id="txtNombre" value="#{indexBean.nombre}" />
+                <p:inputText id="txtNombre" value="#{indexBeanD.nombre}" />
             </span>
             <br/>
             <br/>
-            <p:commandButton value="Guardar" action="#{indexBean.insert()}" update=":form" />
-            <p:commandButton value="Borrar" action="#{indexBean.delete()}" update=":form" />
-            <p:commandButton value="Actualizar" action="#{indexBean.update()}" update=":form" />
+            <p:commandButton value="Guardar" action="#{indexBeanD.insert()}" update=":form" />
+            <p:commandButton value="Borrar" action="#{indexBeanD.delete()}" update=":form" />
+            <p:commandButton value="Actualizar" action="#{indexBeanD.update()}" update=":form" />
         </h:form>
     </h:body>
 </html>

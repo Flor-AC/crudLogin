@@ -21,23 +21,23 @@
             <br/>
             <span class="ui-float-label">
                 <p:outputLabel id="lblNombre" for="txtNombre" value="Nombre : " />
-                <p:inputText id="txtNombre" value="#{indexBean.nombre}" />
+                <p:inputText id="txtNombre" value="#{indexBeanE.nombre}" />
             </span>
             <br/>
             <span class="ui-float-label">
                 <p:outputLabel id="lblDireccion" for="txtDireccion" value="Direccion : " />
-                <p:inputText id="txtDireccion" value="#{indexBean.direccion}" />
+                <p:inputText id="txtDireccion" value="#{indexBeanE.direccion}" />
             </span>
             <br/>
             <span class="ui-float-label">
                 <p:outputLabel id="lblTelefono" for="txtTelefono" value="Telefono : " />
-                <p:inputText id="txtTelefono" value="#{indexBean.telefono}" />
+                <p:inputText id="txtTelefono" value="#{indexBeanE.telefono}" />
             </span>
             <br/>
             <br/>
-            <p:commandButton value="Guardar" action="#{indexBean.insert()}" update=":form" />
-            <p:commandButton value="Borrar" action="#{indexBean.delete()}" update=":form" />
-            <p:commandButton value="Actualizar" action="#{indexBean.update()}" update=":form" />
+            <p:commandButton value="Guardar" action="#{indexBeanE.insert()}" update=":form" />
+            <p:commandButton value="Borrar" action="#{indexBeanE.delete()}" update=":form" />
+            <p:commandButton value="Actualizar" action="#{indexBeanE.update()}" update=":form" />
         </h:form>
     </h:body>
 </html>
