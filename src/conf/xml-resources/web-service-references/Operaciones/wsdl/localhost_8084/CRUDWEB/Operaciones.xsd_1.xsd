@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://operaciones/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://operaciones/">
+
+<xs:element name="actualizarDepartamento" type="tns:actualizarDepartamento" />
+
+<xs:element name="actualizarDepartamentoResponse" type="tns:actualizarDepartamentoResponse" />
+
+<xs:element name="actualizarEmpleado" type="tns:actualizarEmpleado" />
+
+<xs:element name="actualizarEmpleadoResponse" type="tns:actualizarEmpleadoResponse" />
+
+<xs:element name="actualizarPassword" type="tns:actualizarPassword" />
+
+<xs:element name="actualizarPasswordResponse" type="tns:actualizarPasswordResponse" />
+
+<xs:element name="buscarDepartamento" type="tns:buscarDepartamento" />
+
+<xs:element name="buscarDepartamentoResponse" type="tns:buscarDepartamentoResponse" />
+
+<xs:element name="buscarEmpleado" type="tns:buscarEmpleado" />
+
+<xs:element name="buscarEmpleadoResponse" type="tns:buscarEmpleadoResponse" />
+
+<xs:element name="buscarUsuario" type="tns:buscarUsuario" />
+
+<xs:element name="buscarUsuarioResponse" type="tns:buscarUsuarioResponse" />
+
+<xs:element name="eliminarDepartamento" type="tns:eliminarDepartamento" />
+
+<xs:element name="eliminarDepartamentoResponse" type="tns:eliminarDepartamentoResponse" />
+
+<xs:element name="eliminarEmpleado" type="tns:eliminarEmpleado" />
+
+<xs:element name="eliminarEmpleadoResponse" type="tns:eliminarEmpleadoResponse" />
+
+<xs:element name="eliminarUsuario" type="tns:eliminarUsuario" />
+
+<xs:element name="eliminarUsuarioResponse" type="tns:eliminarUsuarioResponse" />
+
+<xs:element name="guardarDepartamento" type="tns:guardarDepartamento" />
+
+<xs:element name="guardarDepartamentoResponse" type="tns:guardarDepartamentoResponse" />
+
+<xs:element name="guardarEmpleado" type="tns:guardarEmpleado" />
+
+<xs:element name="guardarEmpleadoResponse" type="tns:guardarEmpleadoResponse" />
+
+<xs:element name="guardarUsuario" type="tns:guardarUsuario" />
+
+<xs:element name="guardarUsuarioResponse" type="tns:guardarUsuarioResponse" />
+
+<xs:element name="mostarEmpleados" type="tns:mostarEmpleados" />
+
+<xs:element name="mostarEmpleadosResponse" type="tns:mostarEmpleadosResponse" />
+
+<xs:element name="mostrarDepartamentos" type="tns:mostrarDepartamentos" />
+
+<xs:element name="mostrarDepartamentosResponse" type="tns:mostrarDepartamentosResponse" />
+
+<xs:element name="mostrarUsuarios" type="tns:mostrarUsuarios" />
+
+<xs:element name="mostrarUsuariosResponse" type="tns:mostrarUsuariosResponse" />
+
+<xs:complexType name="actualizarPassword">
+<xs:sequence>
+<xs:element name="pojo" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="password" type="xs:string" minOccurs="0" />
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarPasswordResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarDepartamento">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarDepartamentoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:departamento" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="departamento">
+<xs:sequence>
+<xs:element name="id" type="xs:long" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarUsuarios">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="mostrarUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEmpleado">
+<xs:sequence>
+<xs:element name="pojo" type="tns:empleados" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="empleados">
+<xs:sequence>
+<xs:element name="direccion" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:long" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="telefono" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEmpleado">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleados" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarDepartamento">
+<xs:sequence>
+<xs:element name="pojo" type="tns:departamento" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarDepartamentoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarDepartamento">
+<xs:sequence>
+<xs:element name="pojo" type="tns:departamento" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarDepartamentoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostarEmpleados">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="mostarEmpleadosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleados" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEmpleado">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarUsuario">
+<xs:sequence>
+<xs:element name="pojo" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarDepartamento">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarDepartamentoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarUsuario">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDepartamentos">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="mostrarDepartamentosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:departamento" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarEmpleado">
+<xs:sequence>
+<xs:element name="pojo" type="tns:empleados" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuario">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
