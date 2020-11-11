@@ -18,46 +18,37 @@ import operaciones.Usuario;
 public class indexBeanUsr extends operaciones.Usuario{
     private Operaciones_Service service;
     private Operaciones interfaz;
-    private operaciones.Usuario usr;
+    private Usuario usr;
 
     /**
      * Creates a new instance of indexBeanUsr
      */
-    public indexBeanUsr(String usuario,String password) {
-        usr = new operaciones.Usuario();
-        usr.setUsuario(usuario);
-        usr.setPassword(usuario);
-    }
-    
+
     public indexBeanUsr() {
         service = new Operaciones_Service();
         interfaz = service.getOperacionesPort();
+        usr=new Usuario();
     }
 
-    @Override
-    public void setUsuario(String value) {
-        usr.setPassword(value);
-    }
-
-    @Override
-    public void setPassword(String value) {
-        super.setPassword(value); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public void insert() {
         if(interfaz.guardarUsuario(usr)==true){
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage("Successful", "Usuario Nuevo")); 
-        } 
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Succesful", "Operacion exitosa"));
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Operacion fallida"));
+        }
     }
     
     public void updatePassword() {
-        usr = new operaciones.Usuario();
-        interfaz.actualizarPassword(usr);  
+        if(interfaz.actualizarPassword(usr)==true){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Succesful", "Operacion exitosa"));
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Operacion fallida"));
+        }
+            
     }
     
     public void finUser() {
-        usr = new operaciones.Usuario();
         interfaz.buscarUsuario(usr.getUsuario());  
     }
 }

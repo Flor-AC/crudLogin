@@ -12,9 +12,9 @@
         <p:panel id="signIn" header="Login" >
             <h:panelGrid columns="2" cellpadding="25px" >
                 <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
-                <p:inputText id="txtUsername" value="#{indexBeanUsr.usuario}" />
+                <p:inputText id="txtUsername" value="#{indexBeanUsr.usr.usuario}" />
                 <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
-                <p:inputText id="txtPassword" value="#{indexBeanUsr.password}" />
+                <p:inputText id="txtPassword" value="#{indexBeanUsr.usr.password}" />
             </h:panelGrid>
             <br/>
             <br/>
@@ -25,11 +25,11 @@
         <p:panel id="signUp" header="SignUp" visible="true">
             <h:panelGrid columns="2" cellpadding="25px">
                 <p:outputLabel id="lblUsername" for="txtUsername" value="User name : " />
-                <p:inputText id="txtUsername" value="#{indexBeanUsr.usuario}" />
+                <p:inputText id="txtUsername" value="#{indexBeanUsr.usr.usuario}" />
                 
                 <p:outputLabel id="lblPassword" for="txtPassword" value="Password : " />
 
-                <p:password id="txtPassword" value="#{indexBeanUsr.password}"
+                <p:password id="txtPassword" value="#{indexBeanUsr.usr.password}"
                             required="true" placeholder="Password"
                             requiredMessage="Error: enter your password"
                             match="usPasswordConfirm"/>

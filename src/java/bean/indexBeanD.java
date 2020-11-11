@@ -15,48 +15,46 @@ public class indexBeanD extends operaciones.Departamento{
     
     private Operaciones_Service service;
     private Operaciones interfaz;
-    private operaciones.Departamento dep;
+    private Departamento dep;
     
-    public indexBeanD(Long id, String departamento) {
-        dep = new operaciones.Departamento();
-        dep.setId(id);
-        dep.setNombre(nombre);
-    }
     
     public indexBeanD() {
         service = new Operaciones_Service();
         interfaz = service.getOperacionesPort();
+        dep=new Departamento();
     }
 
-    @Override
-    public void setId(long id) {
-        super.setId(id); //To change body of generated methods, choose Tools | Templates.
+    public Departamento getDep() {
+        return dep;
+    }
+
+    public void setDep(Departamento dep) {
+        this.dep = dep;
     }
     
-    @Override
-    public void setNombre(String nombre) {
-        super.setNombre(nombre); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public void insert() {
         if(interfaz.guardarDepartamento(dep)==true){
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage("Successful", "Usuario Nuevo")); 
-        } 
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Succesful", "Operacion exitosa"));
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Operacion fallida"));
+        }
     }
 
     public void update() {
         if(interfaz.actualizarDepartamento(dep)==true){
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage("Successful", "Usuario Nuevo")); 
-        } 
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Succesful", "Operacion exitosa"));
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Operacion fallida"));
+        }
     }
 
     public void delete() {
         if(interfaz.eliminarEmpleado((int)dep.getId())==true){
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage("Successful", "Usuario Nuevo")); 
-        } 
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Succesful", "Operacion exitosa"));
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Operacion fallida"));
+        }
     }
 
     public void find(Integer id) {
